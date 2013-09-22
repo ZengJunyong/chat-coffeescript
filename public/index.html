@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="chat">
+    <head>
+        <title>Web版群聊天</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="css/chat.css" rel="stylesheet" media="screen">
+    </head>
+    <body ng-controller="ChatCtrl">  
+        <div class="well">
+            <h1>Web版群聊天</h1>
+        </div>      
+        <div class="container">
+            <div class="row">
+                <div class="span9">
+                    <div id="chat">
+                        <ul class="nav nav-list">
+                            <li ng-repeat="m in msgs"><span class="label label-info">{{m.who}}</span> {{m.msg}}</li>
+                        </ul>                        
+                    </div>
+                    <div class="input-prepend">
+                        <span class="add-on">@</span>
+                        <input ng-model="me" ng-blur="changeName()" class="span2" type="text" placeholder="你是谁？">
+                        <input ng-model="msg" ng-keyup="sendMsgWhenReturn($event)" class="span6 pull-right" type="text" placeholder="你想对大家说什么？">
+                        <button id="send" ng-click="sendMsg()" class="btn btn-primary pull-right" type="button">发送</button>
+                    </div>
+                </div>
+                <div class="span3">
+                    <ul class="nav nav-list">
+                      <li class="nav-header">群成员</li>
+                      <li ng-repeat="u in users"><a href="#">{{u}}</a></li>
+                    </ul>                    
+                </div>
+            </div>           
+        </div>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+    </body>
+</html>

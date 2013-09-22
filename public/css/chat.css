@@ -1,0 +1,15 @@
+/* app css stylesheet */
+#chat {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+#chat li {
+  line-height: 28px;
+}
+
+.well{
+  text-align: center;
+}
