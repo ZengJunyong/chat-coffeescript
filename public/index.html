@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="chat">
     <head>
-        <title>Web版群聊天</title>
+        <title>Web Group Chat</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.css" rel="stylesheet" media="screen">
@@ -9,7 +9,7 @@
     </head>
     <body ng-controller="ChatCtrl">  
         <div class="well">
-            <h1>Web版群聊天</h1>
+            <h1>Web Group Chat</h1>
         </div>      
         <div class="container">
             <div class="row">
@@ -21,14 +21,14 @@
                     </div>
                     <div class="input-prepend">
                         <span class="add-on">@</span>
-                        <input ng-model="me" ng-blur="changeName()" class="span2" type="text" placeholder="你是谁？">
-                        <input ng-model="msg" ng-keyup="sendMsgWhenReturn($event)" class="span6 pull-right" type="text" placeholder="你想对大家说什么？">
-                        <button id="send" ng-click="sendMsg()" class="btn btn-primary pull-right" type="button">发送</button>
+                        <input ng-model="me" ng-blur="changeName()" class="span2" type="text" placeholder="Who are you ?">
+                        <input ng-model="msg" ng-keyup="sendMsgWhenReturn($event)" class="span6 pull-right" type="text" placeholder="Do you have something to say ?">
+                        <button id="send" ng-click="sendMsg()" class="btn btn-primary pull-right" type="button">Send</button>
                     </div>
                 </div>
                 <div class="span3">
                     <ul class="nav nav-list">
-                      <li class="nav-header">群成员</li>
+                      <li class="nav-header">Users List</li>
                       <li ng-repeat="u in users"><a href="#">{{u}}</a></li>
                     </ul>                    
                 </div>
